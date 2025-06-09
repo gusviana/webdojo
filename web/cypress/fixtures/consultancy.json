@@ -1,0 +1,43 @@
+{
+  "personal": {
+    "name": "Fernando Papito",
+    "email": "papito@webdojo.com",
+    "phone": "11 99999-1000",
+    "concultancyType": "Individual",
+    "personType": "cpf",
+    "document": "87511324002",
+    "discoveryChannels": [
+      "Instagram",
+      "LinkedIn",
+      "Udemy",
+      "YouTube",
+      "Indicação de Amigo"
+    ],
+    "file": "./cypress/fixtures/Document.pdf",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "techs": [
+      "Cypress",
+      "JavaScript",
+      "HTLM",
+      "SQL"
+    ],
+    "terms": true
+  },
+  "company": {
+    "name": "Fernando Papito",
+    "email": "papito@webdojo.com",
+    "phone": "11 99999-1000",
+    "concultancyType": "Individual",
+    "personType": "cnpj",
+    "document": "33810761000168",
+    "discoveryChannels": [
+      "LinkedIn"
+    ],
+    "file": "./cypress/fixtures/Document.pdf",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "techs": [
+      "Cypress"
+    ],
+    "terms": true
+  }
+}

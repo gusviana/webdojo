@@ -25,10 +25,13 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import 'cypress-real-events'
+import './actions/consultancy.actions'
 
-Cypress.Commands.add('Start', ()=> {
+import { getCurrentFormattedDate } from './utils'
+
+Cypress.Commands.add('Start', () => {
     cy.viewport(1920, 1080)
-    cy.visit('http://localhost:3000')
+    cy.visit('/')
 })
 
 Cypress.Commands.add('SubmitLoginForm', (email, senha) => {
@@ -45,4 +48,25 @@ Cypress.Commands.add('GoTo', (ButtonName, PageTitle) => {
 
     cy.contains('h1', PageTitle)
         .should('be.visible')
+})
+
+//Helper
+Cypress.Commands.add('login', (ui = false) => {
+
+    if (ui === true) {
+        cy.Start()
+        cy.SubmitLoginForm('papito@webdojo.com', 'katana123')
+    } else {
+        const token = 'e1033d63a53fe66c0fd3451c7fd8f617'
+        const loginDate = getCurrentFormattedDate()
+
+        cy.setCookie('login_date', loginDate)
+        cy.visit('/dashboard', {
+            onBeforeLoad(win) {
+                win.localStorage.setItem('token', token)
+            }
+        })
+    }
+
+
 })
